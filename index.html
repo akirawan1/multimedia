@@ -1439,7 +1439,7 @@
   <section id="hero" aria-label="Hero">
     <div class="hero-eyebrow">
       <span class="dot"></span>
-      2024 Multimedia Showcase
+      <span class="js-year">2024</span> Multimedia Showcase
     </div>
 
     <h1 class="hero-title">LUMINA</h1>
@@ -1678,11 +1678,11 @@
           <video
             controls
             poster="https://picsum.photos/id/1015/800/450"
-            aria-label="LUMINA Demo Reel 2024"
+            aria-label="LUMINA Demo Reel"
           >
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
           </video>
-          <div class="player-video-caption">Demo Reel 2024 — 3:47</div>
+          <div class="player-video-caption">Demo Reel <span class="js-year">2024</span> — 3:47</div>
         </div>
       </div>
 
@@ -1867,7 +1867,7 @@
 
       <div class="footer-bottom">
         <p class="footer-copy">
-          &copy; 2024 LUMINA Collective. All rights reserved.
+          &copy; <span id="footerYear">2024</span> LUMINA Collective. All rights reserved.
         </p>
         <div class="social-links" aria-label="Social media links">
           <a href="#" class="social-link" aria-label="Instagram">
@@ -1898,6 +1898,14 @@
        JAVASCRIPT
        ============================================================ -->
   <script>
+    /* ----------------------------------------------------------
+       Dynamic year (all .js-year spans + #footerYear)
+       ---------------------------------------------------------- */
+    const currentYear = new Date().getFullYear();
+    document.querySelectorAll('.js-year, #footerYear').forEach((el) => {
+      el.textContent = currentYear;
+    });
+
     /* ----------------------------------------------------------
        Loading screen
        ---------------------------------------------------------- */
