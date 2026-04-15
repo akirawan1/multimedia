@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Signal Desk feature story combining editorial writing, video report, and infographics in a cinematic scrollytelling format." />
+  <title>Signal Desk | Coastal Cities Feature</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #111111;
+      --surface: #191919;
+      --surface-soft: #222222;
+      --text: #f2f2f0;
+      --muted: #b8b8b3;
+      --accent: #f4b942;
+      --accent-cool: #69c3d4;
+      --line: rgba(255, 255, 255, 0.16);
+      --max-story: 980px;
+      --shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Public Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.68) 100%),
+        url("https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1800&q=80") center / cover;
+      transform: scale(1.06);
+      z-index: -2;
+      animation: settle-zoom 1.8s ease forwards;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 28%, rgba(244, 185, 66, 0.14), transparent 44%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: #fcd581;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 6.6vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      text-wrap: balance;
+    }
+
+    .dek {
+      max-width: 74ch;
+      margin: 0 auto;
+      color: #deded8;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+
+    .byline {
+      margin-top: 0.35rem;
+      color: #cfcfca;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .scroll-hint {
+      margin-top: 1.8rem;
+      color: #c4c4bf;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-self: center;
+    }
+
+    .scroll-hint::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      animation: nudge 1.6s ease-in-out infinite;
+    }
+
+    .story-shell {
+      background:
+        radial-gradient(circle at 12% 4%, rgba(105, 195, 212, 0.08), transparent 35%),
+        radial-gradient(circle at 95% 14%, rgba(244, 185, 66, 0.08), transparent 40%),
+        #141414;
+      padding: 3.2rem clamp(1rem, 3.8vw, 2.2rem) 4rem;
+    }
+
+    .story {
+      max-width: var(--max-story);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: clamp(1rem, 2.4vw, 1.6rem);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(2px);
+    }
+
+    .panel p {
+      font-size: 1.03rem;
+      color: #d8d8d2;
+      max-width: 72ch;
+    }
+
+    .dropcap::first-letter {
+      font-family: "Cormorant Garamond", serif;
+      float: left;
+      font-size: 3.15rem;
+      line-height: 0.85;
+      margin-right: 0.45rem;
+      color: var(--accent);
+    }
+
+    .pull-quote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 3.1vw, 2.4rem);
+      line-height: 1.15;
+      color: #f8f8f3;
+      border-left: 3px solid var(--accent-cool);
+      padding-left: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      color: #f3f2ec;
+    }
+
+    .video-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      margin-top: 0.8rem;
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .caption {
+      margin-top: 0.7rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 0.9rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.9rem;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #bbbbba;
+      margin-bottom: 0.65rem;
+      font-weight: 700;
+    }
+
+    .track {
+      height: 0.55rem;
+      border-radius: 999px;
+      background: #343432;
+      overflow: hidden;
+      margin-bottom: 0.42rem;
+    }
+
+    .bar {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f4b942, #ef8f45);
+      animation: grow 1.2s ease forwards;
+    }
+
+    .bar.c2 {
+      background: linear-gradient(90deg, #69c3d4, #5f9bd6);
+      animation-delay: 0.15s;
+    }
+
+    .bar.c3 {
+      background: linear-gradient(90deg, #7ec06a, #9ed75c);
+      animation-delay: 0.3s;
+    }
+
+    .donut {
+      width: 120px;
+      height: 120px;
+      margin: 0.2rem auto 0.55rem;
+      border-radius: 50%;
+      background: conic-gradient(#f4b942 0 46%, #69c3d4 46% 74%, #90ca6e 74% 100%);
+      position: relative;
+    }
+
+    .donut::after {
+      content: "2026";
+      position: absolute;
+      inset: 22px;
+      border-radius: 50%;
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #ededea;
+      letter-spacing: 0.06em;
+    }
+
+    .legend {
+      display: grid;
+      gap: 0.28rem;
+      color: #c7c7c2;
+      font-size: 0.84rem;
+    }
+
+    .dot {
+      width: 0.68rem;
+      height: 0.68rem;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.42rem;
+      transform: translateY(1px);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.58rem;
+    }
+
+    .event {
+      border-left: 2px solid rgba(255, 255, 255, 0.22);
+      padding-left: 0.65rem;
+    }
+
+    .event strong {
+      display: block;
+      color: #ffdb8f;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .event span {
+      color: #c9c9c3;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      margin-top: 2.2rem;
+      text-align: center;
+      color: #9a9a94;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px) scale(0.985);
+      transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.2, 0.75, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+
+    @keyframes settle-zoom {
+      from { transform: scale(1.11); }
+      to { transform: scale(1.03); }
+    }
+
+    @keyframes grow {
+      to { width: var(--w); }
+    }
+
+    @keyframes nudge {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(7px); }
+    }
+
+    @media (max-width: 860px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .bar,
+      .hero::before,
+      .scroll-hint::after {
+        animation: none;
+        transition: none;
+        transform: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content reveal">
+      <p class="kicker">Signal Desk Feature</p>
+      <h1>How Coastal Cities Are Rewriting Climate Policy Street by Street</h1>
+      <p class="dek">
+        One multimedia article combining editorial investigation, documentary footage, and data visualization from six months of field reporting.
+      </p>
+      <p class="byline">By Mira S. Halim | 12 Min Read | April 2026</p>
+      <p class="scroll-hint">Scroll to Continue</p>
+    </div>
+  </header>
+
+  <main class="story-shell">
+    <article class="story">
+      <section class="panel reveal">
+        <p class="dropcap">
+          At dawn in the Harbor District, flood sirens are no longer extraordinary. They are part of the school commute, the produce market opening bell, and the city council's daily briefing. Across three coastal capitals, climate policy has shifted from distant megaproject renderings to block-by-block interventions that citizens can inspect, measure, and challenge in public.
+        </p>
+      </section>
+
+      <section class="panel reveal delay-1">
+        <p class="pull-quote">"The cities making progress are not always spending the most, they are publishing clearer timelines and allowing residents to verify outcomes themselves."</p>
+      </section>
+
+      <section class="panel reveal">
+        <h2 class="section-title">Embedded Documentary Segment</h2>
+        <p>
+          This video follows one newsroom verification desk over 24 hours: from satellite anomaly alerts and geolocation checks to interviews with local responders and policy analysts.
+        </p>
+        <div class="video-wrap reveal delay-1">
+          <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Signal Desk video report" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="caption">
+          Field footage, metadata trails, and budget records are cross-referenced before each update is published in this same article.
+        </p>
+      </section>
+
+      <section class="panel reveal">
+        <h2 class="section-title">Infographics: Funding, Audience, and Timeline</h2>
+        <p>
+          The same story's numbers are summarized below to show where adaptation resources flow, who consumes multimedia reporting, and how verification deadlines shape publication windows.
+        </p>
+
+        <div class="stats-grid">
+          <article class="stat-card reveal delay-1">
+            <p class="stat-label">Resource Allocation</p>
+            <div class="track"><div class="bar" style="--w: 78%;"></div></div>
+            <div class="track"><div class="bar c2" style="--w: 56%;"></div></div>
+            <div class="track"><div class="bar c3" style="--w: 34%;"></div></div>
+            <p class="caption">Mitigation, emergency response, and relocation commitments.</p>
+          </article>
+
+          <article class="stat-card reveal delay-1">
+            <p class="stat-label">Audience Mix</p>
+            <div class="donut" aria-label="Audience split donut chart"></div>
+            <div class="legend">
+              <span><span class="dot" style="background: #f4b942;"></span>Desktop readers 46%</span>
+              <span><span class="dot" style="background: #69c3d4;"></span>Mobile readers 28%</span>
+              <span><span class="dot" style="background: #90ca6e;"></span>Video-first audience 26%</span>
+            </div>
+          </article>
+
+          <article class="stat-card reveal delay-2">
+            <p class="stat-label">Verification Timeline</p>
+            <div class="timeline">
+              <div class="event">
+                <strong>05:10 UTC</strong>
+                <span>Anomaly signal from regional satellite feed.</span>
+              </div>
+              <div class="event">
+                <strong>09:40 UTC</strong>
+                <span>Three-source confirmation from local desk.</span>
+              </div>
+              <div class="event">
+                <strong>14:15 UTC</strong>
+                <span>Data visuals cleared with open budget references.</span>
+              </div>
+              <div class="event">
+                <strong>19:00 UTC</strong>
+                <span>Editorial update and multimedia publish push.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <p>
+          The policy lesson is pragmatic: trust grows when journalism and governance both reveal process, not only outcomes. In that sense, multimedia reporting is no longer decoration around the story, it is the public record of how the story was validated.
+        </p>
+      </section>
+    </article>
+
+    <footer>
+      Signal Desk Multimedia Project | Editorial + Video + Infographics in One Story
+    </footer>
+  </main>
+
+  <script>
+    const revealNodes = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    revealNodes.forEach((node) => observer.observe(node));
+  </script>
+</body>
+</html>
