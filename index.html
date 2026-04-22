@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Signal Desk feature story combining editorial writing, video report, and infographics in a cinematic scrollytelling format." />
-  <title>Signal Desk | Coastal Cities Feature</title>
+  <meta name="description" content="A GLAV editorial examining how hypercompetitive college admissions culture at Naperville North affects student mental well-being." />
+  <title>Signal Desk | The Cost of Competition</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,7 +63,7 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.68) 100%),
-        url("https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1800&q=80") center / cover;
+        url("media/IMG_2466.JPG") center / cover;
       transform: scale(1.06);
       z-index: -2;
       animation: settle-zoom 1.8s ease forwards;
@@ -165,6 +165,38 @@
       max-width: 72ch;
     }
 
+    .story-figure {
+      margin-top: 0;
+      max-width: 72ch;
+    }
+
+    .story-image-slot {
+      min-height: 0;
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      background: none;
+      display: inline-block;
+      padding: 0;
+      overflow: hidden;
+      color: #c8c8c3;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .story-image-slot img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+
+    .story-caption {
+      margin-top: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
     .dropcap::first-letter {
       font-family: "Cormorant Garamond", serif;
       float: left;
@@ -172,158 +204,6 @@
       line-height: 0.85;
       margin-right: 0.45rem;
       color: var(--accent);
-    }
-
-    .pull-quote {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.6rem, 3.1vw, 2.4rem);
-      line-height: 1.15;
-      color: #f8f8f3;
-      border-left: 3px solid var(--accent-cool);
-      padding-left: 1rem;
-      letter-spacing: 0.01em;
-    }
-
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.65rem, 3vw, 2.4rem);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-      color: #f3f2ec;
-    }
-
-    .video-wrap {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;
-      margin-top: 0.8rem;
-    }
-
-    .video-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .caption {
-      margin-top: 0.7rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 0.9rem;
-    }
-
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 0.9rem;
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #bbbbba;
-      margin-bottom: 0.65rem;
-      font-weight: 700;
-    }
-
-    .track {
-      height: 0.55rem;
-      border-radius: 999px;
-      background: #343432;
-      overflow: hidden;
-      margin-bottom: 0.42rem;
-    }
-
-    .bar {
-      height: 100%;
-      width: 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f4b942, #ef8f45);
-      animation: grow 1.2s ease forwards;
-    }
-
-    .bar.c2 {
-      background: linear-gradient(90deg, #69c3d4, #5f9bd6);
-      animation-delay: 0.15s;
-    }
-
-    .bar.c3 {
-      background: linear-gradient(90deg, #7ec06a, #9ed75c);
-      animation-delay: 0.3s;
-    }
-
-    .donut {
-      width: 120px;
-      height: 120px;
-      margin: 0.2rem auto 0.55rem;
-      border-radius: 50%;
-      background: conic-gradient(#f4b942 0 46%, #69c3d4 46% 74%, #90ca6e 74% 100%);
-      position: relative;
-    }
-
-    .donut::after {
-      content: "2026";
-      position: absolute;
-      inset: 22px;
-      border-radius: 50%;
-      background: var(--surface-soft);
-      display: grid;
-      place-items: center;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #ededea;
-      letter-spacing: 0.06em;
-    }
-
-    .legend {
-      display: grid;
-      gap: 0.28rem;
-      color: #c7c7c2;
-      font-size: 0.84rem;
-    }
-
-    .dot {
-      width: 0.68rem;
-      height: 0.68rem;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 0.42rem;
-      transform: translateY(1px);
-    }
-
-    .timeline {
-      display: grid;
-      gap: 0.58rem;
-    }
-
-    .event {
-      border-left: 2px solid rgba(255, 255, 255, 0.22);
-      padding-left: 0.65rem;
-    }
-
-    .event strong {
-      display: block;
-      color: #ffdb8f;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.15rem;
-    }
-
-    .event span {
-      color: #c9c9c3;
-      font-size: 0.88rem;
     }
 
     footer {
@@ -347,16 +227,9 @@
       transform: translateY(0) scale(1);
     }
 
-    .delay-1 { transition-delay: 0.08s; }
-    .delay-2 { transition-delay: 0.16s; }
-
     @keyframes settle-zoom {
       from { transform: scale(1.11); }
       to { transform: scale(1.03); }
-    }
-
-    @keyframes grow {
-      to { width: var(--w); }
     }
 
     @keyframes nudge {
@@ -365,10 +238,6 @@
     }
 
     @media (max-width: 860px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
       .panel p {
         font-size: 1rem;
       }
@@ -380,7 +249,6 @@
       }
 
       .reveal,
-      .bar,
       .hero::before,
       .scroll-hint::after {
         animation: none;
@@ -394,12 +262,12 @@
 <body>
   <header class="hero">
     <div class="hero-content reveal">
-      <p class="kicker">Signal Desk Feature</p>
-      <h1>How Coastal Cities Are Rewriting Climate Policy Street by Street</h1>
+      <p class="kicker">GLAV Multimedia</p>
+      <h1>The Cost of Competition</h1>
       <p class="dek">
-        One multimedia article combining editorial investigation, documentary footage, and data visualization from six months of field reporting.
+        How College Admissions Culture is Compromising Student Well-Being at Naperville North
       </p>
-      <p class="byline">By Mira S. Halim | 12 Min Read | April 2026</p>
+      <p class="byline">By Garrett Palm, Liam Hsui, Aqra Irawan, Vera Graver | April 2026</p>
       <p class="scroll-hint">Scroll to Continue</p>
     </div>
   </header>
@@ -407,86 +275,50 @@
   <main class="story-shell">
     <article class="story">
       <section class="panel reveal">
-        <p class="dropcap">
-          At dawn in the Harbor District, flood sirens are no longer extraordinary. They are part of the school commute, the produce market opening bell, and the city council's daily briefing. Across three coastal capitals, climate policy has shifted from distant megaproject renderings to block-by-block interventions that citizens can inspect, measure, and challenge in public.
-        </p>
+        <p class="dropcap">Picture this: juniors and seniors hunched over their laptops past midnight, every day for weeks, rigorously planning and reworking on their 500-word personal “About Me” Common App essay. In a Pew Research Center survey, more than half of young adult Americans say that the admissions process is more stressful than anything else they have done in school. Year round, high school students struggle with the intensifying race to bulk up college applications. At Naperville North High School, engaging in extensive extracurricular, volunteer, and personal activities and projects while upholding classwork is a common trend in those aspiring to enter prestigious schools. When it’s admission season, those applying can only hope for a decision that can determine their future employment. Naperville North’s college admission culture is too competitive, and it is taking a serious toll on the mental well-being of students.</p>
       </section>
 
       <section class="panel reveal delay-1">
-        <p class="pull-quote">"The cities making progress are not always spending the most, they are publishing clearer timelines and allowing residents to verify outcomes themselves."</p>
+        <figure class="story-figure" aria-label="Image placeholder under first paragraph">
+          <div class="story-image-slot"><img src="media/parc.jpg" alt="The PARC"></div>
+          <figcaption class="story-caption">Naperville North's Postsecondary Advising and Resource Center (PARC), where students can receive guidance on the college application process.</figcaption>
+        </figure>
       </section>
 
       <section class="panel reveal">
-        <h2 class="section-title">Embedded Documentary Segment</h2>
-        <p>
-          This video follows one newsroom verification desk over 24 hours: from satellite anomaly alerts and geolocation checks to interviews with local responders and policy analysts.
-        </p>
-        <div class="video-wrap reveal delay-1">
-          <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Signal Desk video report" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <p class="caption">
-          Field footage, metadata trails, and budget records are cross-referenced before each update is published in this same article.
-        </p>
+        <p>This issue has continued to intensify as expectations from colleges have risen. It is no longer enough to simply be involved; active leadership and foundation have been standardized in our current culture. While balancing coursework, the more competitive students at Naperville North are often found starting their own activities and projects or pushing their way into authoritative chair positions. What once stood out to admission officers is now an oversaturated baseline in resumés.</p>
       </section>
 
       <section class="panel reveal">
-        <h2 class="section-title">Infographics: Funding, Audience, and Timeline</h2>
-        <p>
-          The same story's numbers are summarized below to show where adaptation resources flow, who consumes multimedia reporting, and how verification deadlines shape publication windows.
-        </p>
-
-        <div class="stats-grid">
-          <article class="stat-card reveal delay-1">
-            <p class="stat-label">Resource Allocation</p>
-            <div class="track"><div class="bar" style="--w: 78%;"></div></div>
-            <div class="track"><div class="bar c2" style="--w: 56%;"></div></div>
-            <div class="track"><div class="bar c3" style="--w: 34%;"></div></div>
-            <p class="caption">Mitigation, emergency response, and relocation commitments.</p>
-          </article>
-
-          <article class="stat-card reveal delay-1">
-            <p class="stat-label">Audience Mix</p>
-            <div class="donut" aria-label="Audience split donut chart"></div>
-            <div class="legend">
-              <span><span class="dot" style="background: #f4b942;"></span>Desktop readers 46%</span>
-              <span><span class="dot" style="background: #69c3d4;"></span>Mobile readers 28%</span>
-              <span><span class="dot" style="background: #90ca6e;"></span>Video-first audience 26%</span>
-            </div>
-          </article>
-
-          <article class="stat-card reveal delay-2">
-            <p class="stat-label">Verification Timeline</p>
-            <div class="timeline">
-              <div class="event">
-                <strong>05:10 UTC</strong>
-                <span>Anomaly signal from regional satellite feed.</span>
-              </div>
-              <div class="event">
-                <strong>09:40 UTC</strong>
-                <span>Three-source confirmation from local desk.</span>
-              </div>
-              <div class="event">
-                <strong>14:15 UTC</strong>
-                <span>Data visuals cleared with open budget references.</span>
-              </div>
-              <div class="event">
-                <strong>19:00 UTC</strong>
-                <span>Editorial update and multimedia publish push.</span>
-              </div>
-            </div>
-          </article>
-        </div>
+        <p>Ultimately, students constantly feel pushed to do more. According to the American Psychological Association, high schoolers consistently put academic pressure as one of their top sources of stress. Free time is replaced with productivity, and hobbies are more so acquired with strategic intent. Instead of building genuine interests, students come to build their high school experiences around a presentable application.</p>
       </section>
 
       <section class="panel reveal">
-        <p>
-          The policy lesson is pragmatic: trust grows when journalism and governance both reveal process, not only outcomes. In that sense, multimedia reporting is no longer decoration around the story, it is the public record of how the story was validated.
-        </p>
+        <p>Some may argue that these rising standards are what push newer generations to higher prestige, claiming that competition is what develops the resilience and innovative qualities needed for the real world. After all, training young minds determines the future, with a harsh underline for discipline. However, these perspectives overlook the mental burnout students can experience; when students get under overwhelming pressure, it often diminishes their ability to grow. ZipDo, a meticulous statistical database, states in a report that 66% of students experience formidable amounts of stress and one in three meet the criteria for a mental health disorder. Development and success should never come at the expense of one’s well-being; our modern system does not foster balanced flourishing.</p>
+      </section>
+
+      <section class="panel reveal">
+        <p>The current culture has also exacerbated inequality among student bodies. Everybody varies in access to resources and time needed to pursue the exaggerated qualities that universities want to see. According to Best Colleges, an online student aid source for college planning, 62% of lower-income students report high levels of anxiety, compared to the 43% of their peers. This highlights the inherent unfairness of the process; those with less givens must sacrifice more energy and retain additional stress just to keep up.</p>
+      </section>
+
+      <section class="panel reveal">
+        <p>In addition, the frequent adoption of quantity over quality of experiences undermines the value of meaningful involvement and what is true to a student’s real interests. Even applications themselves have skyrocketed in number, which has depleted acceptance rates, especially of prestigious schools. To appear well-rounded, some students may join activities without deep engagement. According to the Ivy Scholars, an educational consultation service, the most invested students now commonly apply to 15 or more schools, compared to the formerly accepted one or two. Extracurriculars, which should be routes to explore one’s passions and development, have now devolved simply into a building block for applications.</p>
+      </section>
+
+      <section class="panel reveal delay-1">
+        <figure class="story-figure" aria-label="Image placeholder under first paragraph">
+          <div class="story-image-slot"><img src="media/IMG_7332.JPG" alt="The PARC"></div>
+          <figcaption class="story-caption">The campus of North Central College. Although not on many student's radars, it offers a supportive environment for academic growth.</figcaption>
+        </figure>
+      </section>
+
+      <section class="panel reveal">
+        <p>Naperville North prides itself on developing whole and balanced students. Unfortunately, a corrosive culture that replaces discovery and passion with resume padding has taken hold. Modern hypercompetition has left this promise unfulfilled and student well-being should not continue to be held at stake. Before another graduating class burns out, administrators, students, and guardians must begin actively choosing healthy development over a filler academic appearance.</p>
       </section>
     </article>
 
     <footer>
-      Signal Desk Multimedia Project | Editorial + Video + Infographics in One Story
+      GLAV Editorial Project | The Cost of Competition
     </footer>
   </main>
 
