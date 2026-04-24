@@ -159,6 +159,34 @@
       backdrop-filter: blur(2px);
     }
 
+    .panel.infographic-panel {
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+      overflow: hidden;
+      display: block;
+    }
+
+    .panel.infographic-panel .story-figure {
+      width: 100%;
+      margin: 0;
+    }
+
+    .panel.infographic-panel .story-image-slot {
+      display: block;
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0;
+    }
+
+    .panel.infographic-panel img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .panel p {
       font-size: 1.03rem;
       color: #d8d8d2;
@@ -195,6 +223,42 @@
       margin-top: 0.6rem;
       font-size: 0.92rem;
       color: var(--muted);
+    }
+
+    .video-panel {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .video-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.1;
+      color: #f0e9d4;
+    }
+
+    .video-description {
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: 0.98rem;
+    }
+
+    .video-embed {
+      width: 100%;
+      max-width: 920px;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #0b0b0b;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     .dropcap::first-letter {
@@ -262,7 +326,7 @@
 <body>
   <header class="hero">
     <div class="hero-content reveal">
-      <p class="kicker">GLAV Multimedia</p>
+      <p class="kicker">The Huskie Herald 8 Multimedia</p>
       <h1>The Cost of Competition</h1>
       <p class="dek">
         How College Admissions Culture is Compromising Student Well-Being at Naperville North
@@ -275,7 +339,9 @@
   <main class="story-shell">
     <article class="story">
       <section class="panel reveal">
-        <p class="dropcap">Picture this: juniors and seniors hunched over their laptops past midnight, every day for weeks, rigorously planning and reworking on their 500-word personal “About Me” Common App essay. In a Pew Research Center survey, more than half of young adult Americans say that the admissions process is more stressful than anything else they have done in school. Year round, high school students struggle with the intensifying race to bulk up college applications. At Naperville North High School, engaging in extensive extracurricular, volunteer, and personal activities and projects while upholding classwork is a common trend in those aspiring to enter prestigious schools. When it’s admission season, those applying can only hope for a decision that can determine their future employment. Naperville North’s college admission culture is too competitive, and it is taking a serious toll on the mental well-being of students.</p>
+        <p class="dropcap">Picture this: juniors and seniors hunched over their laptops past midnight, every day for weeks, rigorously planning and reworking on their 500-word personal “About Me” Common App essay. In a Pew Research Center survey, more than half of young adult Americans say that the admissions process is more stressful than anything else they have done in school.</p>
+        <p>Year round, high school students struggle with the intensifying race to bulk up college applications. At Naperville North High School, engaging in extensive extracurricular, volunteer, and personal activities and projects while upholding classwork is a common trend in those aspiring to enter prestigious schools.</p>
+        <p>When it’s admission season, those applying can only hope for a decision that can determine their future employment. Naperville North’s college admission culture is too competitive, and it is taking a serious toll on the mental well-being of students.</p>
       </section>
 
       <section class="panel reveal delay-1">
@@ -286,23 +352,59 @@
       </section>
 
       <section class="panel reveal">
-        <p>This issue has continued to intensify as expectations from colleges have risen. It is no longer enough to simply be involved; active leadership and foundation have been standardized in our current culture. While balancing coursework, the more competitive students at Naperville North are often found starting their own activities and projects or pushing their way into authoritative chair positions. What once stood out to admission officers is now an oversaturated baseline in resumés.</p>
+        <p>This issue has continued to intensify as expectations from colleges have risen. It is no longer enough to simply be involved; active leadership and foundation have been standardized in our current culture.</p>
+        <p>While balancing coursework, the more competitive students at Naperville North are often found starting their own activities and projects or pushing their way into authoritative chair positions. What once stood out to admission officers is now an oversaturated baseline in resumés.</p>
+      </section>
+
+      <section class="panel reveal delay-1">
+        <figure class="story-figure" aria-label="Image placeholder under first paragraph">
+          <div class="story-image-slot"><img src="media/commonapp1.png" alt="Clubs at Naperville North"></div>
+          <figcaption class="story-caption">The Common Application form, which students must complete to apply to multiple colleges, making it the center of student's anxiety.</figcaption>
+        </figure>
       </section>
 
       <section class="panel reveal">
-        <p>Ultimately, students constantly feel pushed to do more. According to the American Psychological Association, high schoolers consistently put academic pressure as one of their top sources of stress. Free time is replaced with productivity, and hobbies are more so acquired with strategic intent. Instead of building genuine interests, students come to build their high school experiences around a presentable application.</p>
+        <p>Ultimately, students constantly feel pushed to do more. According to the American Psychological Association, high schoolers consistently put academic pressure as one of their top sources of stress.</p>
+        <p>Free time is replaced with productivity, and hobbies are more so acquired with strategic intent. Instead of building genuine interests, students come to build their high school experiences around a presentable application.</p>
+      </section>
+
+      <section class="panel reveal delay-1">
+        <figure class="story-figure" aria-label="Image placeholder under first paragraph">
+          <div class="story-image-slot"><img src="media/clubs.jpg" alt="Clubs at Naperville North"></div>
+          <figcaption class="story-caption">A poster of all the various different clubs students take part of to look impressive on their college applications.</figcaption>
+        </figure>
       </section>
 
       <section class="panel reveal">
-        <p>Some may argue that these rising standards are what push newer generations to higher prestige, claiming that competition is what develops the resilience and innovative qualities needed for the real world. After all, training young minds determines the future, with a harsh underline for discipline. However, these perspectives overlook the mental burnout students can experience; when students get under overwhelming pressure, it often diminishes their ability to grow. ZipDo, a meticulous statistical database, states in a report that 66% of students experience formidable amounts of stress and one in three meet the criteria for a mental health disorder. Development and success should never come at the expense of one’s well-being; our modern system does not foster balanced flourishing.</p>
+        <p>Some may argue that these rising standards are what push newer generations to higher prestige, claiming that competition is what develops the resilience and innovative qualities needed for the real world. After all, training young minds determines the future, with a harsh underline for discipline.</p>
+        <p>However, these perspectives overlook the mental burnout students can experience; when students get under overwhelming pressure, it often diminishes their ability to grow. ZipDo, a meticulous statistical database, states in a report that 66% of students experience formidable amounts of stress and one in three meet the criteria for a mental health disorder.</p>
+        <p>Development and success should never come at the expense of one’s well-being; our modern system does not foster balanced flourishing.</p>
+      </section>
+
+      <section class="panel infographic-panel reveal">
+        <figure class="story-figure" aria-label="Infographic placeholder">
+          <div class="story-image-slot"><img src="media/infographic.png" alt="Infographic about college admissions stress"></div>
+        </figure>
       </section>
 
       <section class="panel reveal">
-        <p>The current culture has also exacerbated inequality among student bodies. Everybody varies in access to resources and time needed to pursue the exaggerated qualities that universities want to see. According to Best Colleges, an online student aid source for college planning, 62% of lower-income students report high levels of anxiety, compared to the 43% of their peers. This highlights the inherent unfairness of the process; those with less givens must sacrifice more energy and retain additional stress just to keep up.</p>
+        <p>The current culture has also exacerbated inequality among student bodies. Everybody varies in access to resources and time needed to pursue the exaggerated qualities that universities want to see.</p>
+        <p>According to Best Colleges, an online student aid source for college planning, 62% of lower-income students report high levels of anxiety, compared to the 43% of their peers. This highlights the inherent unfairness of the process; those with less givens must sacrifice more energy and retain additional stress just to keep up.</p>
+      </section>
+
+      <section class="panel reveal delay-1">
+        <figure class="story-figure" aria-label="Image placeholder under first paragraph">
+          <div class="story-image-slot"><img src="media/students.jpeg" alt="Students at Naperville North"></div>
+          <figcaption class="story-caption">Two students diligently study together, trying to keep up with the overwhelming expectations of their college applications.
+
+</figcaption>
+        </figure>
       </section>
 
       <section class="panel reveal">
-        <p>In addition, the frequent adoption of quantity over quality of experiences undermines the value of meaningful involvement and what is true to a student’s real interests. Even applications themselves have skyrocketed in number, which has depleted acceptance rates, especially of prestigious schools. To appear well-rounded, some students may join activities without deep engagement. According to the Ivy Scholars, an educational consultation service, the most invested students now commonly apply to 15 or more schools, compared to the formerly accepted one or two. Extracurriculars, which should be routes to explore one’s passions and development, have now devolved simply into a building block for applications.</p>
+        <p>In addition, the frequent adoption of quantity over quality of experiences undermines the value of meaningful involvement and what is true to a student’s real interests. Even applications themselves have skyrocketed in number, which has depleted acceptance rates, especially of prestigious schools.</p>
+        <p>To appear well-rounded, some students may join activities without deep engagement. According to the Ivy Scholars, an educational consultation service, the most invested students now commonly apply to 15 or more schools, compared to the formerly accepted one or two.</p>
+        <p>Extracurriculars, which should be routes to explore one’s passions and development, have now devolved simply into a building block for applications.</p>
       </section>
 
       <section class="panel reveal delay-1">
@@ -313,12 +415,33 @@
       </section>
 
       <section class="panel reveal">
-        <p>Naperville North prides itself on developing whole and balanced students. Unfortunately, a corrosive culture that replaces discovery and passion with resume padding has taken hold. Modern hypercompetition has left this promise unfulfilled and student well-being should not continue to be held at stake. Before another graduating class burns out, administrators, students, and guardians must begin actively choosing healthy development over a filler academic appearance.</p>
+        <p>Naperville North prides itself on developing whole and balanced students. Unfortunately, a corrosive culture that replaces discovery and passion with resume padding has taken hold.</p>
+        <p>Modern hypercompetition has left this promise unfulfilled and student well-being should not continue to be held at stake. Before another graduating class burns out, administrators, students, and guardians must begin actively choosing healthy development over a filler academic appearance.</p>
+      </section>
+
+            <section class="panel infographic-panel reveal">
+        <figure class="story-figure" aria-label="Infographic placeholder">
+          <div class="story-image-slot"><img src="media/infographic2.png" alt="Infographic about college admissions stress"></div>
+        </figure>
+      </section>
+
+      <section class="panel reveal video-panel" aria-label="YouTube video section">
+        <h2 class="video-title">Watch: Students and Staff Voices on Admissions Pressure</h2>
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Student Voices on Admissions Pressure"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
     </article>
 
     <footer>
-      GLAV Editorial Project | The Cost of Competition
+      The Huskie Herald 8 Multimedia Project | The Cost of Competition
     </footer>
   </main>
 
